@@ -33,3 +33,15 @@ transactionDetails"\s*:\s*"\s*UPI IN\/([\d]{10,13})\/.*?"sCredit"\s*:\s*"([\d.,]
 
 utr 金额 余额
 ```
+
+## canara 不带插件
+CANARAPAYIN
+
+##### 爬取账单规则
+``` text
+{"Txn Date": "09-03-202510:42:00", "Value Date": "09Mar2025", "Cheque No.": "506827753326", "Description": "UPI/CR/506827753326/TANSEERA/JAKA/**15532@ptaxis/zPLX//PTM1f2a478f0ef94593be4645364ab77465/09/03/202510:42:00", "Branch Code": "33", "Debit": "", "Credit": "100.22", "Balance": "6699.59"}
+
+Cheque No."\s*:\s*"([\d]{10,13}).*?"Credit"\s*:\s*"([\d.,]+)".*?"Balance"\s*:\s*"([\d.,]+)"
+
+utr 金额 余额
+```
