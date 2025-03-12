@@ -66,3 +66,27 @@ BOMSELFPAYIN
 
 utr 金额 余额
 ```
+
+## BOI 代收公户
+BOIPAYIN
+
+##### 账单爬取规则
+``` text
+{"date":"Friday,November8,20242:48PM","description":"UPI/983647117743/CR/MrRAJ/IDIB/rajan2312/Paymen","cheque_no":"","currency":"INR","debit":"","credit":"5000.00","balance":"5000.00"}
+
+"description"\s*:\s*".*?([\d]{10,13}).*?".*?"credit"\s*:\s*"([\d.,]+)".*?"balance"\s*:\s*"([\d.,]+)"
+
+utr 金额 余额
+```
+
+## BOI 代收私户
+BOISELFPAYIN
+
+##### 账单爬取规则
+``` text
+{"date":"Wednesday,September25,20243:33PM","description":"UPI/426913102501/CR/RUPEND/ICIC/844709453/Paidv","cheque_no":"","currency":"INR","debit":"","credit":"10001.00","balance":"10001.00"}
+
+"description"\s*:\s*".*?([\d]{10,13}).*?".*?"credit"\s*:\s*"([\d.,]+)".*?"balance"\s*:\s*"([\d.,]+)"
+
+utr 金额 余额
+```
