@@ -54,3 +54,15 @@ Cheque No."\s*:\s*"([\d]{10,13}).*?"Credit"\s*:\s*"([\d.,]+)".*?"Balance"\s*:\s*
 
 utr 金额 余额
 ```
+
+## BOM代收私户
+BOMSELFPAYIN
+
+##### 账单爬取规则(账单导入共用)
+``` text
+{"Date":"22/12/2024","Particulars":"UPI 577543261714/AIRP/Jatothu Akhil/Payment from P","Cheque/Reference No":"","Debit":"","Credit":"100.00 INR","Balance":"25100.00 INR","Channel":"Internet Banking"}
+
+"Particulars"\s*:\s*"UPI\s*(\d{10,13})\/.*?"\s*,\s*"Credit"\s*:\s*"([\d.,]+)\s*.*?"\s*,\s*"Balance"\s*:\s*"([\d.,]+)\s*.*?"
+
+utr 金额 余额
+```
