@@ -8,7 +8,7 @@ IDBISELFPAYIN
 ``` text
 {"Txn Date":"15-01-2025 22:40:00","Value Date":"15/01/2025","Instrument ID":"","CR/DR":"Cr.","Txn Amount":"25000.00","Balance":"25055.71","Description":"UPI/501501259006/PRABHU M"}
 
-"Cr\.".*?"Txn Amount"\s*:\s*"([\d.]+)".*?"Balance"\s*:\s*"([\d.,]+)".*?"Description"\s*:\s*"UPI\/([\d]{12})\/
+"Cr\.".*?"Txn Amount"\s*:\s*"([\d.]+)".*?"Balance"\s*:\s*"([\d.,]+)".*?"Description"\s*:\s*"UPI\/([\d]{10,13})\/
 
 金额 余额 utr
 ```
@@ -17,7 +17,7 @@ IDBISELFPAYIN
 ``` text
 {"Srl": "1353", "Txn Date": "25/02/202507:20:33", "Value Date": "25/02/2025", "Description": "UPI/542222544784/ZUHABANWER", "Cheque No": "", "CR/DR": "Cr.", "CCY": "INR", "Amount (INR)": "20000.00", "Balance (INR)": "20122.53"}
 
-"Description"\s*:\s*"UPI\/([\d]{12})\/.*?"CR\/DR": "Cr\.".*?"Amount \(INR\)":\s*"([\d.]+)".*?"Balance \(INR\)":\s*"([\d.]+)
+"Description"\s*:\s*"UPI\/([\d]{10,13})\/.*?"CR\/DR": "Cr\.".*?"Amount \(INR\)":\s*"([\d.]+)".*?"Balance \(INR\)":\s*"([\d.]+)
 
 utr 金额 余额
 ```
