@@ -2,19 +2,19 @@
 
 ## 目录索引
 - [代收私户](#代收私户)
-  - [IDBI 代收私户](#idbi-代收私户)
-  - [BOM 代收私户](#bom-代收私户)
-  - [BOI 代收私户](#boi-代收私户)
+  - [IDBI 代收私户](#IDBI-代收私户)
+  - [BOM 代收私户](#BOM-代收私户)
+  - [BOI 代收私户](#BOI-代收私户)
 - [代收公户](#代收公户)
-  - [BOI 代收公户](#boi-代收公户)
+  - [BOI 代收公户](#BOI-代收公户)
 - [其他银行](#其他银行)
-  - [Federal One](#federal-one)
-  - [Canara 不带插件](#canara-不带插件)
+  - [Federal One](#FEDERAl-ONE)
+  - [Canara 不带插件](#CANARA-不带插件)
 
 
 ## 代收私户
 
-### <span id="idbi-代收私户">IDBI 代收私户</span> `IDBISELFPAYIN`
+### <span id="IDBI-代收私户">IDBI 代收私户</span> `IDBISELFPAYIN`
 
 #### 账单爬取规则
 ##### 示例数据
@@ -45,7 +45,7 @@ utr|金额|余额
 ```
 
 
-### <span id="federal one">federal one</span> `FEDERALONEPAYIN`
+### <span id="FEDERAl-ONE">federal one</span> `FEDERALONEPAYIN`
 
 #### 账单爬取规则
 ##### 示例数据
@@ -75,7 +75,7 @@ Particulars"\s*:\s*"\s*UPIIN\/([\d]{10,13})\/.*?"Deposits"\s*:\s*"([\d.,]+)".*?"
 utr|金额|余额
 ```
 
-### <span id="canara-不带插件">canara 不带插件</span> `CANARAPAYIN`
+### <span id="CANARA-不带插件">canara 不带插件</span> `CANARAPAYIN`
 
 #### 账单爬取规则
 ##### 示例数据
