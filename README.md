@@ -50,29 +50,29 @@ utr|金额|余额
 #### 账单爬取规则
 ##### 示例数据
 ``` json
-{"postingDateString":"28/02/2025 03:10:34 PM","valueDate":"28/02/2025","transRefNo":"S98633619","customerRefNo":"50591510511965      ","credit":48.0,"transactionDetails":"UPI IN/505969513770/9060122275@ptsbi/qwe/5085     ","transactionPostingBranch":"505969513770/qwe              ","sCredit":"48.00","txnAmt":"48.00","txnType":"Credit","runningBalance":"189.00","documentId":"   2","viewProperties":{"highlightRowCSS":"greenGridRow"}}
+{"postingDateString":"14/03/2025 02:58:10 PM","valueDate":"14/03/2025","transRefNo":"  S570165","customerRefNo":"50731458844021      ","credit":300.51,"transactionDetails":"UPI IN/226998491575/9649541249@ybl/2oGaB2/5085    ","transactionPostingBranch":"226998491575/2oGaB2           ","sCredit":"300.51","txnAmt":"300.51","txnType":"Credit","runningBalance":"158,682.07","documentId":"   2","viewProperties":{"highlightRowCSS":"greenGridRow"}}
 ```
 ##### 正则表达式
 ``` javascript
-transactionDetails"\s*:\s*"\s*UPI IN\/([\d]{10,13})\/.*?"sCredit"\s*:\s*"([\d.,]+)".*?"runningBalance"\s*:\s*"([\d.,-]+)"
+transactionPostingBranch"\s*:\s*"([\d]{10,13})\/(2[a-zA-Z\d]{4}2)\s*".*?"sCredit"\s*:\s*"([\d.,]+)".*?"runningBalance"\s*:\s*"([\d.,-]+)"
 ```
 ##### 变量名
 ``` text
-utr|金额|余额
+utr|随机码|金额|余额
 ```
 
 #### 账单导入规则
 ##### 示例数据
 ``` json
-{"Date": "12-03-2025", "Value Date": "12-03-2025", "Particulars": "UPIIN/507183618246/8822344745@pthdfc/pYPo/5085", "Tran Type": "TFR", "Tran ID": "S79053642", "Cheque Details": "", "Withdrawals": "", "Deposits": "500.59", "Balance": "3507.49", "Dr/Cr": "CR"}
+{"Date": "12-03-2025", "Value Date": "12-03-2025", "Particulars": "UPIIN/507183618246/8822344745@pthdfc/2pYPo2/5085", "Tran Type": "TFR", "Tran ID": "S79053642", "Cheque Details": "", "Withdrawals": "", "Deposits": "500.59", "Balance": "3507.49", "Dr/Cr": "CR"}
 ```
 ##### 正则表达式
 ``` javascript
-Particulars"\s*:\s*"\s*UPIIN\/([\d]{10,13})\/.*?"Deposits"\s*:\s*"([\d.,]+)".*?"Balance"\s*:\s*"([\d.,]+)".*?"Dr\/Cr"\s*:\s*"CR"
+Particulars"\s*:\s*"\s*UPIIN\/([\d]{10,13})\/.*?\/(2[a-zA-Z\d]{4}2)\/.*?"Deposits"\s*:\s*"([\d.,]+)".*?"Balance"\s*:\s*"([\d.,]+)".*?"Dr\/Cr"\s*:\s*"CR"
 ```
 ##### 变量名
 ``` text
-utr|金额|余额
+utr|随机码|金额|余额
 ```
 
 ### <span id="CANARA-不带插件">canara 不带插件</span> `CANARAPAYIN`
@@ -80,11 +80,11 @@ utr|金额|余额
 #### 账单爬取规则
 ##### 示例数据
 ``` json
-{"utr":"436625231975","bill_date":"2024-12-31T18:59:24","transactionType":"C","amount":10,"description":"UPI/CR/436625231975/NADIPUDI /BARB/**44002@pthdfc/NA//PTMdee538e8b4344fd19c5611899323b969/31/12/2024 18:59:24"}
+{"utr":"974630378636","bill_date":"2025-03-14T15:14:28","transactionType":"C","amount":299.68,"description":"UPI/CR/974630378636/SUNNY SO /PUNB/**36676@ybl/24pKg2//YBL0a8ebb990d994a14abacc719c5ec83b2/14/03/2025 15:14:28"}
 ```
 ##### 正则表达式
 ``` javascript
-"utr"\s*:\s*"([\d]{10,13})".*?"amount":\s*(\d+).*?,
+"utr"\s*:\s*"([\d]{10,13})".*?"amount":\s*([\d.,]+),.*?"description"\s*:\s*".*?\/(2[a-zA-Z\d]{4}2)\/
 ```
 ##### 变量名
 ``` text
